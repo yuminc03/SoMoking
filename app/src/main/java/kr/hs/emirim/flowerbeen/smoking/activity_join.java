@@ -36,11 +36,11 @@ public class activity_join extends AppCompatActivity {
 
         //아이디 값 찾기
         et_id = findViewById(R.id.id); //아이디
-        et_id.setText("gradio0711@gmail.com");
+        et_id.setText("gradio07");
         et_name = findViewById(R.id.textView2); //이름
         et_name.setText("gradio");
         et_password = findViewById(R.id.pw); //비번
-        et_password.setText("13467913");
+        et_password.setText("gradio*11");
         et_phone = findViewById(R.id.editTextPhone); //전화번호
         et_phone.setText("010-7989-4656");
         et_address = findViewById(R.id.address); //주소
