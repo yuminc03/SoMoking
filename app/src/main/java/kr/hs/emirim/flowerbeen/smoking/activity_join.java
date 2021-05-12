@@ -23,7 +23,7 @@ public class activity_join extends AppCompatActivity {
     private EditText et_id, et_name, et_password, et_phone, et_address; //회원가입 입력 정보
     private Button btn_id_check, btn_register; //회원가입 버튼
     private AlertDialog dialog;//다이얼로그 창
-    private boolean validate = false;
+    private boolean confirm = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,52 @@ public class activity_join extends AppCompatActivity {
         et_phone.setText("010-7989-4656");
         et_address = findViewById(R.id.address); //주소
         et_address.setText("01802");
+
+        //아이디 중복 체크
+        btn_id_check = findViewById(R.id.btn_id_check);
+        btn_id_check.setOnClickListener(v -> {
+            String UserEmail = et_id.getText().toString();
+            if (confirm) {
+                return; //검증 완료
+            }
+
+            if (UserEmail.equals("")) {//아이디 입력을 안했을 경우
+                AlertDialog.Builder builder = new AlertDialog.Builder(activity_join.this);//알림창 띄우기
+                dialog = builder.setMessage("아이디를 입력하세요.").setPositiveButton("확인", null).create();
+                dialog.show();
+                return;
+            }
+
+            Response.Listener<String> responseListener = new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    try {
+
+                        JSONObject jsonResponse = new JSONObject(response);
+                        boolean success = jsonResponse.getBoolean("success");
+
+                        if (success) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(activity_join.this);
+                            dialog = builder.setMessage("사용할 수 있는 아이디입니다.").setPositiveButton("확인", null).create();
+                            dialog.show();
+                            et_id.setEnabled(false); //아이디값 고정
+                            confirm = true; //검증 완료
+                            btn_id_check.setBackgroundColor(getResources().getColor(R.color.colorGray));//버튼 색 바꾸기
+                        }
+                        else {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(activity_join.this);
+                            dialog = builder.setMessage("이미 존재하는 아이디입니다.").setNegativeButton("확인", null).create();
+                            dialog.show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            };
+            ConfirmIdRequest confirmIdRequest = new ConfirmIdRequest(userID, responseListener);
+            RequestQueue queue = Volley.newRequestQueue(activity_join.this);
+            queue.add(confirmIdRequest);
+        });
 
         // 회원가입 버튼 클릭 시 수행
         btn_register = findViewById(R.id.button2);
