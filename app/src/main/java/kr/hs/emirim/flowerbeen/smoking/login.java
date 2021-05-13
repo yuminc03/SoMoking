@@ -37,7 +37,7 @@ public class login extends AppCompatActivity {
         //로그인 화면전환
         btn_login.setOnClickListener(v -> {
             // EditText에 현재 입력되어있는 값을 get(가져온다)해온다.
-            String email = et_id.getText().toString();
+            String userID = et_id.getText().toString();
             String password = et_pw.getText().toString();
 
             Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -49,12 +49,12 @@ public class login extends AppCompatActivity {
                         JSONObject jsonObject = new JSONObject(response);
                         boolean success = jsonObject.getBoolean("success");
                         if (success) { // 로그인에 성공한 경우
-                            String email = jsonObject.getString("email");
+                            String userID = jsonObject.getString("email");
                             String password = jsonObject.getString("password");
 
                             Toast.makeText(getApplicationContext(),"로그인 성공!",Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(login.this, alarm.class);
-                            intent.putExtra("userID", email);
+                            intent.putExtra("userID", userID);
                             intent.putExtra("password", password);
                             startActivity(intent);
                         } else { // 로그인에 실패한 경우
@@ -66,7 +66,7 @@ public class login extends AppCompatActivity {
                     }
                 }
             };
-            LoginRequest loginRequest = new LoginRequest(email, password, responseListener);
+            LoginRequest loginRequest = new LoginRequest(userID, password, responseListener);
             RequestQueue queue = Volley.newRequestQueue(login.this);
             queue.add(loginRequest);
         });

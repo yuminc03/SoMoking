@@ -49,12 +49,12 @@ public class activity_join extends AppCompatActivity {
         //아이디 중복 체크
         btn_id_check = findViewById(R.id.btn_id_check);
         btn_id_check.setOnClickListener(v -> {
-            String UserEmail = et_id.getText().toString();
+            String userID = et_id.getText().toString();
             if (confirm) {
                 return; //검증 완료
             }
 
-            if (UserEmail.equals("")) {//아이디 입력을 안했을 경우
+            if (userID.equals("")) {//아이디 입력을 안했을 경우
                 AlertDialog.Builder builder = new AlertDialog.Builder(activity_join.this);//알림창 띄우기
                 dialog = builder.setMessage("아이디를 입력하세요.").setPositiveButton("확인", null).create();
                 dialog.show();
@@ -81,6 +81,7 @@ public class activity_join extends AppCompatActivity {
                             AlertDialog.Builder builder = new AlertDialog.Builder(activity_join.this);
                             dialog = builder.setMessage("이미 존재하는 아이디입니다.").setNegativeButton("확인", null).create();
                             dialog.show();
+
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -98,11 +99,28 @@ public class activity_join extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // EditText에 현재 입력되어있는 값을 get(가져온다)해온다.
-                String userID = et_id.getText().toString();
-                String name = et_name.getText().toString();
-                String password = et_password.getText().toString();
-                String phone = et_phone.getText().toString();
-                String address = et_address.getText().toString();
+                final String userID = et_id.getText().toString();
+                final String name = et_name.getText().toString();
+                final String password = et_password.getText().toString();
+                final String phone = et_phone.getText().toString();
+                final String address = et_address.getText().toString();
+
+                //아이디 중복체크 했는지 확인
+                if (!confirm) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(activity_join.this);
+                    dialog = builder.setMessage("중복된 아이디가 있는지 확인하세요.").setNegativeButton("확인", null).create();
+                    dialog.show();
+                    return;
+                }
+
+                //한 칸이라도 입력 안했을 경우
+                if (userID.equals("") || name.equals("") || password.equals("") || phone.equals("")
+                        || address.equals("")) {//모든 데이터를 입력했는지 확인
+                    AlertDialog.Builder builder = new AlertDialog.Builder(activity_join.this);
+                    dialog = builder.setMessage("모든 정보를 입력해주세요!").setNegativeButton("확인", null).create();
+                    dialog.show();
+                    return;
+                }
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
@@ -117,6 +135,11 @@ public class activity_join extends AppCompatActivity {
                                 startActivity(intent);
                             } else { // 회원등록에 실패한 경우
                                 Toast.makeText(getApplicationContext(),"회원 가입 실패.. 다시 시도해주세요..!",Toast.LENGTH_SHORT).show();
+                                et_id.setText("");
+                                et_name.setText("");
+                                et_password.setText("");
+                                et_phone.setText("");
+                                et_address.setText("");
                                 return;
                             }
                         } catch (JSONException e) {
@@ -132,96 +155,6 @@ public class activity_join extends AppCompatActivity {
 
             }
         });
-
-//        btn_id_check = findViewById(R.id.btn_id_check);//이메일 중복 확인
-//        btn_id_check.setOnClickListener(view -> {
-//            String UserEmail = et_id.getText().toString();
-//            if (validate) {
-//                return; //검증 완료
-//            }
-//
-//            if (UserEmail.equals("")) {
-//                AlertDialog.Builder builder = new AlertDialog.Builder(activity_join.this);
-//                dialog = builder.setMessage("아이디를 입력하세요.").setPositiveButton("확인", null).create();
-//                dialog.show();
-//                return;
-//            }
-//
-//            Response.Listener<String> responseListener = new Response.Listener<String>() {
-//                @Override
-//                public void onResponse(String response) {
-//                    try {
-//
-//                        JSONObject jsonResponse = new JSONObject(response);
-//                        boolean success = jsonResponse.getBoolean("success");
-//
-//                        if (success) {
-//                            AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-//                            dialog = builder.setMessage("사용할 수 있는 아이디입니다.").setPositiveButton("확인", null).create();
-//                            dialog.show();
-//                            join_email.setEnabled(false); //아이디값 고정
-//                            validate = true; //검증 완료
-//                        }
-//                        else {
-//                            AlertDialog.Builder builder = new AlertDialog.Builder(activity_join.this);
-//                            dialog = builder.setMessage("이미 존재하는 아이디입니다.").setNegativeButton("확인", null).create();
-//                            dialog.show();
-//                        }
-//                    } catch (JSONException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//            };
-//            ValidateRequest validateRequest = new ValidateRequest(UserEmail, responseListener);
-//            RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
-//            queue.add(validateRequest);
-//        });
-//        btn_register = findViewById(R.id.button2);
-//        btn_register.setOnClickListener(v -> { //회원가입 버튼을 눌렀을 때
-//            try{
-//                String result;
-//                String email = et_id.getText().toString();
-//                String name = et_name.getText().toString();
-//                String password = et_password.getText().toString();
-//                String phone = et_phone.getText().toString();
-//                String address = et_address.getText().toString();
-//
-//                if (email.equals("") || name.equals("") || password.equals("") || phone.equals("")
-//                        || address.equals("")) {//모든 데이터를 입력했는지 확인
-//                    AlertDialog.Builder builder = new AlertDialog.Builder(activity_join.this);
-//                    dialog = builder.setMessage("모든 정보를 입력해주세요!").setNegativeButton("확인", null).create();
-//                    dialog.show();
-//                    return;
-//                }
-//
-//                Communication comm = new Communication();
-//                result = comm.execute(email, name, password, phone, address).get();
-//                //System.out.println(result);
-//                if(result.equals("회원 가입 성공!")){
-//                    Intent intent = new Intent(getApplicationContext(), alarm.class);
-//                    startActivity(intent);
-//                    Toast.makeText(this, "회원가입 성공!", Toast.LENGTH_SHORT).show();
-//                }
-//                else if(result.equals("이미 존재하는 이메일 입니다..")){
-//                    Toast.makeText(this, "이미 가입한 이메일입니다!", Toast.LENGTH_LONG).show();
-//                    et_id.setText("");
-//                    et_name.setText("");
-//                    et_password.setText("");
-//                    et_phone.setText("");
-//                    et_address.setText("");
-//                }
-//                else{
-//                    Toast.makeText(this, "회원가입에 실패하였습니다...", Toast.LENGTH_LONG).show();
-//                    et_id.setText("");
-//                    et_name.setText("");
-//                    et_password.setText("");
-//                    et_phone.setText("");
-//                    et_address.setText("");
-//                }
-//            }catch (Exception e){
-//                Log.i("DBtest", "..error..");
-//            }
-//        });
 
     }
 }
