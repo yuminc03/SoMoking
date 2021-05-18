@@ -65,7 +65,7 @@ public class activity_join extends AppCompatActivity {
                 @Override
                 public void onResponse(String response) {
                     try {
-
+                        Log.d("idCheck", response);
                         JSONObject jsonResponse = new JSONObject(response);
                         boolean success = jsonResponse.getBoolean("success");
 
