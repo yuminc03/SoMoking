@@ -49,7 +49,7 @@ public class login extends AppCompatActivity {
                         JSONObject jsonObject = new JSONObject(response);
                         boolean success = jsonObject.getBoolean("success");
                         if (success) { // 로그인에 성공한 경우
-                            String userID = jsonObject.getString("email");
+                            String userID = jsonObject.getString("userID");
                             String password = jsonObject.getString("password");
 
                             Toast.makeText(getApplicationContext(),"로그인 성공!",Toast.LENGTH_SHORT).show();

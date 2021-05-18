@@ -20,7 +20,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class activity_join extends AppCompatActivity {
-    private EditText et_id, et_name, et_password, et_phone, et_address; //회원가입 입력 정보
+    private EditText et_name, et_id, et_password, et_phone, et_address; //회원가입 입력 정보
     private Button btn_id_check, btn_register; //회원가입 버튼
     private AlertDialog dialog;//다이얼로그 창
     private boolean confirm = false;
@@ -35,16 +35,16 @@ public class activity_join extends AppCompatActivity {
         actionBar.hide();
 
         //아이디 값 찾기
-        et_id = findViewById(R.id.id); //아이디
-        et_id.setText("gradio07");
         et_name = findViewById(R.id.textView2); //이름
-        et_name.setText("gradio");
+        //et_name.setText("gradio");
+        et_id = findViewById(R.id.id); //아이디
+        //et_id.setText("gradio07");
         et_password = findViewById(R.id.pw); //비번
-        et_password.setText("gradio*11");
+        //et_password.setText("12345678");
         et_phone = findViewById(R.id.editTextPhone); //전화번호
-        et_phone.setText("010-7989-4656");
+        //et_phone.setText("010-7989-4656");
         et_address = findViewById(R.id.address); //주소
-        et_address.setText("01802");
+        //et_address.setText("01802");
 
         //아이디 중복 체크
         btn_id_check = findViewById(R.id.btn_id_check);
@@ -99,8 +99,8 @@ public class activity_join extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // EditText에 현재 입력되어있는 값을 get(가져온다)해온다.
-                final String userID = et_id.getText().toString();
                 final String name = et_name.getText().toString();
+                final String userID = et_id.getText().toString();
                 final String password = et_password.getText().toString();
                 final String phone = et_phone.getText().toString();
                 final String address = et_address.getText().toString();
@@ -114,10 +114,17 @@ public class activity_join extends AppCompatActivity {
                 }
 
                 //한 칸이라도 입력 안했을 경우
-                if (userID.equals("") || name.equals("") || password.equals("") || phone.equals("")
+                if (name.equals("") || userID.equals("") || password.equals("") || phone.equals("")
                         || address.equals("")) {//모든 데이터를 입력했는지 확인
                     AlertDialog.Builder builder = new AlertDialog.Builder(activity_join.this);
                     dialog = builder.setMessage("모든 정보를 입력해주세요!").setNegativeButton("확인", null).create();
+                    dialog.show();
+                    return;
+                }
+                //입력양식에 맞지 않는 경우
+                if(userID.length() < 8 || password.length() < 8 || !(phone.substring(0,3)).equals("010")){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(activity_join.this);
+                    dialog = builder.setMessage("입력 양식을 지켜주세요!").setNegativeButton("확인", null).create();
                     dialog.show();
                     return;
                 }
@@ -135,8 +142,8 @@ public class activity_join extends AppCompatActivity {
                                 startActivity(intent);
                             } else { // 회원등록에 실패한 경우
                                 Toast.makeText(getApplicationContext(),"회원 가입 실패.. 다시 시도해주세요..!",Toast.LENGTH_SHORT).show();
-                                et_id.setText("");
                                 et_name.setText("");
+                                et_id.setText("");
                                 et_password.setText("");
                                 et_phone.setText("");
                                 et_address.setText("");
