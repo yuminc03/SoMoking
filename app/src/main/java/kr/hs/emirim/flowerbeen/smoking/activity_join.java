@@ -81,7 +81,6 @@ public class activity_join extends AppCompatActivity {
                             AlertDialog.Builder builder = new AlertDialog.Builder(activity_join.this);
                             dialog = builder.setMessage("이미 존재하는 아이디입니다.").setNegativeButton("확인", null).create();
                             dialog.show();
-
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();

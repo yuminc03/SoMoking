@@ -63,7 +63,7 @@
         app:queryHint="나의 현재주소를 입력하시오" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/btn_update_user"
         android:layout_width="43dp"
         android:layout_height="37dp"
         android:layout_marginStart="228dp"
@@ -78,7 +78,7 @@
         app:srcCompat="@drawable/icon3" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/btn_location"
         android:layout_width="37dp"
         android:layout_height="38dp"
         android:layout_marginStart="140dp"
@@ -93,7 +93,7 @@
         app:srcCompat="@drawable/icon1" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/btn_sound"
         android:layout_width="43dp"
         android:layout_height="37dp"
         android:layout_marginStart="180dp"
@@ -109,7 +109,7 @@
 
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/btn_logout"
         android:layout_width="79dp"
         android:layout_height="36dp"
         android:layout_marginTop="190dp"

@@ -25,7 +25,7 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //        액션바 숨기기
+        //액션바 숨기기
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
