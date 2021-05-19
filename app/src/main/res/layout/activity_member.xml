@@ -52,7 +52,7 @@
         app:layout_constraintVertical_bias="0.699" />
 
     <EditText
-        android:id="@+id/textView2"
+        android:id="@+id/et_id"
         android:layout_width="325dp"
         android:layout_height="50dp"
         android:layout_marginStart="40dp"
@@ -106,7 +106,7 @@
         app:layout_constraintVertical_bias="0.836" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_enter"
         android:layout_width="158dp"
         android:layout_height="48dp"
         android:layout_marginStart="124dp"

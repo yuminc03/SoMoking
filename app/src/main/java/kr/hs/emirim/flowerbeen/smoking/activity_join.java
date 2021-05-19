@@ -35,16 +35,11 @@ public class activity_join extends AppCompatActivity {
         actionBar.hide();
 
         //아이디 값 찾기
-        et_name = findViewById(R.id.textView2); //이름
-        //et_name.setText("gradio");
+        et_name = findViewById(R.id.et_id); //이름
         et_id = findViewById(R.id.id); //아이디
-        //et_id.setText("gradio07");
         et_password = findViewById(R.id.pw); //비번
-        //et_password.setText("12345678");
         et_phone = findViewById(R.id.editTextPhone); //전화번호
-        //et_phone.setText("010-7989-4656");
         et_address = findViewById(R.id.address); //주소
-        //et_address.setText("01802");
 
         //아이디 중복 체크
         btn_id_check = findViewById(R.id.btn_id_check);
@@ -93,7 +88,7 @@ public class activity_join extends AppCompatActivity {
         });
 
         // 회원가입 버튼 클릭 시 수행
-        btn_register = findViewById(R.id.button2);
+        btn_register = findViewById(R.id.btn_enter);
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

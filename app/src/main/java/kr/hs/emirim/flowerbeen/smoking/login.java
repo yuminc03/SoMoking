@@ -32,7 +32,7 @@ public class login extends AppCompatActivity {
         et_id = findViewById(R.id.id);
         et_pw = findViewById(R.id.pw);
         btn_login = findViewById(R.id.button);
-        btn_register = findViewById(R.id.button2);
+        btn_register = findViewById(R.id.btn_enter);
 
         //로그인 화면전환
         btn_login.setOnClickListener(v -> {

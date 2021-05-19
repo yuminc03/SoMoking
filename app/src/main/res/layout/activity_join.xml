@@ -51,7 +51,7 @@
         app:layout_constraintVertical_bias="0.718" />
 
     <EditText
-        android:id="@+id/textView2"
+        android:id="@+id/et_id"
         android:layout_width="325dp"
         android:layout_height="50dp"
         android:layout_marginStart="40dp"
@@ -119,11 +119,11 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/pw"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/et_id"
         app:layout_constraintVertical_bias="0.474" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_enter"
         android:layout_width="158dp"
         android:layout_height="48dp"
         android:layout_marginStart="124dp"
@@ -148,7 +148,7 @@
         app:backgroundTint="#515150"
         app:layout_constraintBottom_toTopOf="@+id/pw"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/et_id"
         app:layout_constraintVertical_bias="0.473" />
 
 

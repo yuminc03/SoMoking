@@ -2,17 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="kr.hs.emirim.flowerbeen.smoking">
 
-    <uses-permission android:name="android.permission.INTERNET"/> <!--인터넷 권한 선언-->
-    <!--android:usesCleartextTraffic="true"  모든 http주소에 접근 가능 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Smoking">
-        <activity android:name=".sound"></activity>
+        android:theme="@style/Theme.Smoking"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".check_login"></activity>
+        <activity android:name=".sound" />
         <activity android:name=".map" />
         <activity android:name=".alarm" />
         <activity android:name=".member" />

@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //화면전환
-        Button imageButton = (Button)findViewById(R.id.button2);
+        Button imageButton = (Button)findViewById(R.id.btn_enter);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
