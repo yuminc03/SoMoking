@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class ConfirmIdRequest extends StringRequest {
     //서버 url 설정(php파일 연동)
-    final static  private String URL="http://10.0.2.2:81/IdRequest.php";
+    final static  private String URL="http://10.0.2.2:81/smoking/IdRequest.php";
     private Map<String, String> map;
 
     public ConfirmIdRequest(String userID, Response.Listener<String> listener){
