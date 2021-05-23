@@ -34,7 +34,7 @@
         app:layout_constraintVertical_bias="0.321" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/et_phone"
         android:layout_width="325dp"
         android:layout_height="50dp"
         android:layout_marginStart="40dp"
@@ -70,7 +70,7 @@
         app:layout_constraintVertical_bias="0.449" />
 
     <EditText
-        android:id="@+id/pw"
+        android:id="@+id/et_pw"
         android:layout_width="325dp"
         android:layout_height="50dp"
         android:layout_marginStart="40dp"
@@ -88,7 +88,7 @@
         app:layout_constraintVertical_bias="0.57" />
 
     <EditText
-        android:id="@+id/address"
+        android:id="@+id/et_address"
         android:layout_width="325dp"
         android:layout_height="50dp"
         android:layout_marginStart="40dp"

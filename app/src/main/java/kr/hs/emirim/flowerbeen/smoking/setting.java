@@ -10,32 +10,33 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Switch;
 import android.widget.TimePicker;
 
-public class alarm extends AppCompatActivity {
-    private Button btn_logout;
-    private ImageButton btn_location, btn_update_user;
+public class setting extends AppCompatActivity {
+    private ImageButton btn_update_user, btn_logout;
+    private Switch btn_sound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alarm);
+        setContentView(R.layout.activity_setting);
 
         //        액션바 숨기기
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        btn_logout = findViewById(R.id.btn_logout);//로그아웃 버튼
+        btn_logout = (ImageButton)findViewById(R.id.btn_logout);//로그아웃 버튼
 
-        TimePicker timePicker = (TimePicker) this.findViewById(R.id.timePicker);
-        timePicker.setIs24HourView(true); // 24H Mode.
+//        TimePicker timePicker = (TimePicker) this.findViewById(R.id.timePicker);
+//        timePicker.setIs24HourView(true); // 24H Mode.
 
         btn_logout.setOnClickListener(v -> {//로그아웃 버튼을 누를 경우
             new AlertDialog.Builder(this/* 해당 액티비티를 가르킴 */)
                     .setTitle("로그아웃").setMessage("지금 로그아웃 하시겠습니까??")
                     .setPositiveButton("예", new DialogInterface.OnClickListener() {//로그아웃 하는 경우
                         public void onClick(DialogInterface dialog, int whichButton) {
-                            Intent intent = new Intent(alarm.this/*현재 activity 위치*/ , MainActivity.class/*이동 activity 위치*/);
+                            Intent intent = new Intent(setting.this/*현재 activity 위치*/ , MainActivity.class/*이동 activity 위치*/);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);//setFlags - 하나의 Flag를 지정한다.
                             //FLAG_ACTIVITY_CLEAR_TOP - 상위 스택 제거
                             //설정되어 있고 시작되는 activity가 현재 작업에서 이미 실행 중이면 해당 activity의
@@ -59,9 +60,12 @@ public class alarm extends AppCompatActivity {
                     .show();
         });
 
+        btn_sound = (Switch)findViewById(R.id.btn_sound);//소리 조정 버튼
+
+
         //회원수정 화면 전환
-        btn_location = (ImageButton)findViewById(R.id.btn_location);//회원의 위치 버튼
-        btn_location.setOnClickListener(new View.OnClickListener() {
+        btn_update_user = (ImageButton)findViewById(R.id.btn_update_user);//회원정보 수정 버튼
+        btn_update_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),activity_join.class);
@@ -69,14 +73,5 @@ public class alarm extends AppCompatActivity {
             }
         });
 
-        btn_update_user = (ImageButton)findViewById(R.id.btn_update_user);//회원정보 수정 버튼
-        btn_update_user.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),map.class);
-                startActivity(intent);
-            }
-        });
-        
     }
 }
