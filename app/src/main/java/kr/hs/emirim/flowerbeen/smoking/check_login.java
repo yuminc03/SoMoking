@@ -1,5 +1,6 @@
 package kr.hs.emirim.flowerbeen.smoking;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -18,6 +19,10 @@ public class check_login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_login);
+
+        //        액션바 숨기기
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         et_id = findViewById(R.id.et_id);
         btn_enter = findViewById(R.id.btn_enter);

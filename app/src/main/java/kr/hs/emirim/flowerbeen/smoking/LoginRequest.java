@@ -13,7 +13,6 @@ public class LoginRequest extends StringRequest {
     final static private String URL = "http://10.0.2.2:81/smoking/login.php";
     private Map<String, String> map;
 
-
     public LoginRequest(String userID, String password, Response.Listener<String> listener) {
         super(Request.Method.POST, URL, listener, null);
 
