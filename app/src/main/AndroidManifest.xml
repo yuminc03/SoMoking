@@ -18,7 +18,6 @@
         <activity android:name=".smoke" />
         <activity android:name=".menu" />
         <activity android:name=".check_login" />
-        <activity android:name=".sound" />
         <activity android:name=".map" />
         <activity android:name=".member" />
         <activity android:name=".activity_join" />

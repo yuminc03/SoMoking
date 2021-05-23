@@ -68,7 +68,7 @@ public class setting extends AppCompatActivity {
         btn_update_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), member.class);
+                Intent intent = new Intent(getApplicationContext(), check_login.class);
                 startActivity(intent);
             }
         });

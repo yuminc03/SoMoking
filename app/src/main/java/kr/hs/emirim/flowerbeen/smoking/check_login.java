@@ -20,7 +20,7 @@ public class check_login extends AppCompatActivity {
         setContentView(R.layout.activity_check_login);
 
         et_id = findViewById(R.id.et_id);
-        btn_enter = findViewById(R.id.btn_logout);
+        btn_enter = findViewById(R.id.btn_enter);
 
         btn_enter.setOnClickListener(v -> {
             userID = et_id.getText().toString();
