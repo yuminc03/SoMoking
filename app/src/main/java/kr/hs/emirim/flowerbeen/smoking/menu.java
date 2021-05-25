@@ -34,7 +34,8 @@ public class menu extends AppCompatActivity {
             startActivity(intent);
         });
         ibtn_alarm.setOnClickListener(v -> {
-            //Intent intent = new Intent(menu.this, menu.class);
+            Intent intent = new Intent(menu.this, StartSmokeActivity.class);
+            startActivity(intent);
         });
         ibtn_map.setOnClickListener(v -> {
             Intent intent = new Intent(menu.this, map.class);

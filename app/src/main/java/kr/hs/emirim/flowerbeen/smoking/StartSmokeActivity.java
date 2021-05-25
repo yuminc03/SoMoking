@@ -12,7 +12,7 @@ import java.text.NumberFormat;
 
 public class StartSmokeActivity extends AppCompatActivity {
     // Initializing my textView
-    TextView textView;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
