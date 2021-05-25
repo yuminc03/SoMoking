@@ -17,7 +17,7 @@
         app:srcCompat="@drawable/background" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/ibtn_alarm"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="641dp"
@@ -26,9 +26,9 @@
         android:layout_marginBottom="24dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton7"
+        app:layout_constraintBottom_toTopOf="@+id/ibtn_setting"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton4"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_somoking"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/menu_2" />
 
@@ -38,20 +38,20 @@
 
     <!--    알람-->
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/ibtn_setting"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="48dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton6"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton5"
+        app:layout_constraintEnd_toEndOf="@+id/ibtn_alarm"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_map"
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_alarm"
         app:srcCompat="@drawable/menu_4" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/ibtn_somoking"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="40dp"
@@ -62,15 +62,15 @@
         android:layout_marginBottom="24dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton6"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton5"
+        app:layout_constraintBottom_toTopOf="@+id/ibtn_map"
+        app:layout_constraintEnd_toStartOf="@+id/ibtn_alarm"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.594"
         app:srcCompat="@drawable/menu_1" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/ibtn_map"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="37dp"
@@ -79,9 +79,9 @@
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton7"
-        app:layout_constraintStart_toStartOf="@+id/imageButton4"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4"
+        app:layout_constraintEnd_toStartOf="@+id/ibtn_setting"
+        app:layout_constraintStart_toStartOf="@+id/ibtn_somoking"
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_somoking"
         app:srcCompat="@drawable/menu_3" />
 
     <TextView
@@ -95,7 +95,7 @@
         android:text="SMOKING"
         android:textColor="#250000"
         android:textSize="80sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton4"
+        app:layout_constraintBottom_toTopOf="@+id/ibtn_somoking"
         app:layout_constraintStart_toStartOf="@+id/textView2" />
 
     <TextView
@@ -164,7 +164,7 @@
             android:textSize="20dp" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btn_attend"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="320dp"

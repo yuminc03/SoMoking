@@ -14,7 +14,7 @@ import android.widget.Switch;
 import android.widget.TimePicker;
 
 public class setting extends AppCompatActivity {
-    private ImageButton btn_update_user, btn_logout;
+    private ImageButton btn_update_user, btn_logout, ibtn_menu;
     private Switch btn_sound;
 
     @Override
@@ -27,6 +27,8 @@ public class setting extends AppCompatActivity {
         actionBar.hide();
 
         btn_logout = (ImageButton)findViewById(R.id.btn_logout);//로그아웃 버튼
+        btn_sound = (Switch)findViewById(R.id.btn_sound);//소리 조정 버튼
+        ibtn_menu = findViewById(R.id.ibtn_menu);//메뉴로 돌아가기
 
 //        TimePicker timePicker = (TimePicker) this.findViewById(R.id.timePicker);
 //        timePicker.setIs24HourView(true); // 24H Mode.
@@ -60,7 +62,7 @@ public class setting extends AppCompatActivity {
                     .show();
         });
 
-        btn_sound = (Switch)findViewById(R.id.btn_sound);//소리 조정 버튼
+        
 
 
         //회원수정 화면 전환
