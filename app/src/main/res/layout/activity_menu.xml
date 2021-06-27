@@ -79,30 +79,28 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="638dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
+        android:layout_width="384dp"
+        android:layout_height="89dp"
         android:layout_marginTop="252dp"
         android:fontFamily="sans-serif-black"
         android:text="SMOKING"
         android:textColor="#250000"
         android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="525dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
+        android:layout_width="392dp"
+        android:layout_height="93dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif-medium"
         android:text="WELCOME TO"
         android:textColor="#250000"
         android:textSize="60sp"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 
