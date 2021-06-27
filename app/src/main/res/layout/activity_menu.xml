@@ -7,10 +7,18 @@
     tools:context=".menu">
 
 
+    <!--설정-->
+
+    <!--    소모킹-->
+
+    <!--    알람-->
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
         android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -18,165 +26,84 @@
 
     <ImageButton
         android:id="@+id/ibtn_alarm"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="641dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="544dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/ibtn_setting"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ibtn_somoking"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/menu_2" />
 
-    <!--설정-->
-
-    <!--    소모킹-->
-
-    <!--    알람-->
     <ImageButton
         android:id="@+id/ibtn_setting"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="48dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="204dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/ibtn_alarm"
-        app:layout_constraintStart_toEndOf="@+id/ibtn_map"
-        app:layout_constraintTop_toBottomOf="@+id/ibtn_alarm"
+        app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/menu_4" />
 
     <ImageButton
         android:id="@+id/ibtn_somoking"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="641dp"
-        android:layout_marginEnd="29dp"
-        android:layout_marginRight="29dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+
+        android:layout_marginTop="544dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/ibtn_map"
-        app:layout_constraintEnd_toStartOf="@+id/ibtn_alarm"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.594"
         app:srcCompat="@drawable/menu_1" />
 
     <ImageButton
         android:id="@+id/ibtn_map"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginRight="37dp"
-        android:layout_marginBottom="48dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginBottom="204dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/ibtn_setting"
-        app:layout_constraintStart_toStartOf="@+id/ibtn_somoking"
-        app:layout_constraintTop_toBottomOf="@+id/ibtn_somoking"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/menu_3" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="638dp"
-        android:layout_height="121dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginBottom="36dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="252dp"
         android:fontFamily="sans-serif-black"
         android:text="SMOKING"
         android:textColor="#250000"
-        android:textSize="80sp"
-        app:layout_constraintBottom_toTopOf="@+id/ibtn_somoking"
-        app:layout_constraintStart_toStartOf="@+id/textView2" />
+        android:textSize="60sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="638dp"
-        android:layout_height="121dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
+        android:layout_width="525dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif-medium"
         android:text="WELCOME TO"
         android:textColor="#250000"
-        android:textSize="80sp"
+        android:textSize="60sp"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="773dp"
-        android:layout_height="867dp"
-        android:background="#6BAFAFAF"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.546">
-
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="211dp"
-            android:layout_height="84dp"
-            android:layout_marginStart="280dp"
-            android:layout_marginLeft="200dp"
-            android:layout_marginTop="50dp"
-            android:fontFamily="sans-serif-black"
-            android:shadowColor="@color/black"
-            android:shadowDx="1"
-            android:shadowDy="1"
-            android:shadowRadius="3"
-            android:text="출석체크"
-            android:textColor="#FFFFFF"
-            android:textSize="50dp" />
-
-        <CalendarView
-            android:id="@+id/calendar"
-            android:layout_width="566dp"
-            android:layout_height="389dp"
-            android:layout_margin="80dp"
-            android:background="#BFFFFDFD"
-            android:padding="10dp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="210dp"
-            android:layout_marginBottom="30dp"
-            android:fontFamily="sans-serif-black"
-            android:text="한달동안 출석하면 소소한 선물이 옵니다."
-            android:textColor="@color/black"
-            android:textSize="20dp" />
-
-        <Button
-            android:id="@+id/btn_attend"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="320dp"
-            android:layout_marginBottom="30dp"
-            android:text="출석"
-            android:textColor="#000000"
-            app:backgroundTint="#FFFFFF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
