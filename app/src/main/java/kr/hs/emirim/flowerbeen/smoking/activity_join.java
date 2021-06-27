@@ -132,7 +132,7 @@ public class activity_join extends AppCompatActivity {
                             boolean success = jsonObject.getBoolean("success");
                             if (success) { // 회원등록에 성공한 경우
                                 Toast.makeText(getApplicationContext(),"회원 가입 성공! 환영합니다!",Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(activity_join.this, setting.class);
+                                Intent intent = new Intent(activity_join.this, menu.class);
                                 startActivity(intent);
                             } else { // 회원등록에 실패한 경우
                                 Toast.makeText(getApplicationContext(),"회원 가입 실패.. 다시 시도해주세요..!",Toast.LENGTH_SHORT).show();

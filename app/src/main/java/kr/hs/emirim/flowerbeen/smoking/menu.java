@@ -11,7 +11,6 @@ import android.widget.ImageButton;
 
 public class menu extends AppCompatActivity {
     private ImageButton ibtn_somoking, ibtn_alarm, ibtn_map, ibtn_setting;
-    private Button btn_attend;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +25,6 @@ public class menu extends AppCompatActivity {
         ibtn_alarm = findViewById(R.id.ibtn_alarm);//알람
         ibtn_map = findViewById(R.id.ibtn_map);//지도
         ibtn_setting = findViewById(R.id.ibtn_setting);//설정
-
-        btn_attend = findViewById(R.id.btn_attend);//출석
 
         ibtn_somoking.setOnClickListener(v -> {
             Intent intent = new Intent(menu.this, smoking.class);
@@ -44,9 +41,6 @@ public class menu extends AppCompatActivity {
         ibtn_setting.setOnClickListener(v -> {
             Intent intent = new Intent(menu.this, setting.class);
             startActivity(intent);
-        });
-        btn_attend.setOnClickListener(v -> {
-            //Intent intent = new Intent(menu.this, menu.class);
         });
 
     }
